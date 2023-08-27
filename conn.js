@@ -1,31 +1,15 @@
-// connector
-const { Client } = require('pg')
-const client = new Client({
-  user: 'sgpostgres',
-  host: 'SG-PostgreNoSSL-14-pgsql-master.devservers.scalegrid.io',
-  database: 'postgres',
-  password: 'password',
-  port: 5432
-})
-client.connect(function (err) {
-  if (err) throw err
-  console.log('Connected!')
-})
+import 'dotenv/config'
+import { Sequelize } from 'sequelize'
 
-// const { Client } = require('pg');
-// var fs = require('fs');
+console.log(process.env.DATABASE, process.env.DATABASE_HOST)
+export const sequelizeConnection = new Sequelize(
+  `postgres://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE}`,
+  { logging: false }
+)
 
-// const client = new Client({
-//   user: 'sgpostgres',
-//   host: 'SG-NewPostgreCluster-5-pgsql-master.devservers.scalegrid.io',
-//   database: 'postgres',
-//   password: 'password',
-//   port: 6432,
-//   ssl  : {
-//     ca : fs.readFileSync('<path to CA cert file>')
-//   }
-// })
-// client.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
+try {
+  await sequelizeConnection.authenticate()
+  console.log('Connection has been established successfully.')
+} catch (error) {
+  console.error('Unable to connect to the database:', error)
+}

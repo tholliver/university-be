@@ -1,6 +1,11 @@
+import 'dotenv/config.js'
 import express, { json } from 'express'
 import { corsMiddleware } from './cors.js'
-import { moviesRouter } from './routes/movies.js'
+import {
+  careerLevelRouter,
+  careerRouter,
+  courseRouter
+} from './routes/index.js'
 // import pg from 'pg'
 
 const app = express()
@@ -10,10 +15,12 @@ app.use(json())
 
 app.use(corsMiddleware())
 
-app.use('/movies', moviesRouter)
+app.use('/careerlevel', careerLevelRouter)
+app.use('/career', careerRouter)
+app.use('/course', courseRouter)
 
 const PORT = process.env.PORT ?? 8080
 
 app.listen(PORT, () => {
-  console.log('Listening on: ', `http://localhost:${PORT}`)
+  console.log('Listening on:', `http://localhost:${PORT}`)
 })
