@@ -29,6 +29,6 @@ const Professor_Course = sequelizeConnection.define(
 Professor.belongsToMany(Course, { through: Professor_Course })
 Course.belongsToMany(Professor, { through: Professor_Course })
 
-await Professor.sync({ force: true })
-await Professor_Course.sync({ force: true })
-console.log('The table for the User model was just (re)created!')
+// await Professor.sync({ force: true })
+// await Professor_Course.sync({ force: true })
+// console.log('The table for the User model was just (re)created!')

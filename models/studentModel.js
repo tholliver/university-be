@@ -24,5 +24,5 @@ export const Student = sequelizeConnection.define('student', {
   }
 })
 
-await Student.sync({ force: true })
-console.log('The table for the Student model was just (re)created!')
+// await Student.sync({ force: true })
+// console.log('The table for the Student model was just (re)created!')

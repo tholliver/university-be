@@ -29,5 +29,5 @@ export const Room = sequelizeConnection.define('room', {
 //   through: CourseOccurence
 // })
 
-await Room.sync({ force: true })
-console.log('The table for the Course Occurrence model was just (re)created!')
+// await Room.sync({ force: true })
+// console.log('The table for the Course Occurrence model was just (re)created!')

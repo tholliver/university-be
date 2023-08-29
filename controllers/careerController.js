@@ -25,7 +25,6 @@ export class CareerController {
 
   static async createCareer(req, res) {
     const validationRes = validateCareer(req.body)
-    console.log('the cond', validationRes.data.careerlevelId)
 
     if (validationRes.success) {
       const newCareer = await Career.create(validationRes.data)
@@ -34,7 +33,6 @@ export class CareerController {
         return res.status(201).send(newCareer)
       }
     }
-
-    return { error: 'Error creating' }
+    return { error: validationRes.error }
   }
 }

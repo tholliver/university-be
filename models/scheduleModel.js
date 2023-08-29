@@ -29,5 +29,5 @@ CourseOccurence.belongsToMany(Room, {
   through: Schedule
 })
 
-await Schedule.sync({ force: true })
-console.log('The table for the Course Occurrence model was just (re)created!')
+// await Schedule.sync({ force: true })
+// console.log('The table for the Course Occurrence model was just (re)created!')

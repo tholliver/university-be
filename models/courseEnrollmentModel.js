@@ -36,5 +36,5 @@ Student.belongsToMany(CourseOccurence, {
   through: CourseEnrollment
 })
 
-await CourseEnrollment.sync({ force: true })
-console.log('The table for the Course Enrollment model was just (re)created!')
+// await CourseEnrollment.sync({ force: true })
+// console.log('The table for the Course Enrollment model was just (re)created!')

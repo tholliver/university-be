@@ -1,13 +1,19 @@
 import { CareerLevel } from '../models/careerLevelModel.js'
+import { Career } from '../models/careerModel.js'
 import { validateCareerLevel } from '../schemas/career.js'
 
 export class CareerLevelController {
   static async getCareerLevels(req, res) {
-    const { name } = req.query
-    const condition = name ? { level_name: name } : null
+    // const { name } = req.query
+    // const condition = name ? { level_name: name } : null
     // console.log('the cond', condition)
-
-    CareerLevel.findAll({ where: condition })
+    // { where: condition }
+    CareerLevel.findAll({
+      include: {
+        model: Career,
+        required: true
+      }
+    })
       .then((data) => {
         return res.send(data)
       })
