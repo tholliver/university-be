@@ -1,3 +1,16 @@
+# University Career and Course Enrollment Backend
+
+A minimalistic backend designed to manage university semester planning, career, and course enrollment APIs, complemented by a simple frontend interface [UNI - NextJS](https://github.com/tholliver/uni-management).
+
+Used <code>Sequelize ORM</code> to desing this database [University Entity-Relationship Diagram (ERD)](https://vertabelo.com/blog/er-diagram-for-a-university-database/4.jpg)
+
+Zod for data validation and PostgreSQL as the database management system.
+
+
+*Tried to apply the MVC pattern using Express routes and controllers.*
+
+## Endpoints
+
 ### Get all careers
 
 <details>
