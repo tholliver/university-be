@@ -6,7 +6,8 @@ import {
   careerRouter,
   courseRouter,
   studentRouter,
-  careerEnrollmentRouter
+  careerEnrollmentRouter,
+  dashboardRouter
 } from './routes/index.js'
 // import pg from 'pg'
 
@@ -22,6 +23,7 @@ app.use('/career', careerRouter)
 app.use('/course', courseRouter)
 app.use('/student', studentRouter)
 app.use('/career-enrollment', careerEnrollmentRouter)
+app.use('/dashboard', dashboardRouter)
 
 const PORT = process.env.PORT ?? 8080
 

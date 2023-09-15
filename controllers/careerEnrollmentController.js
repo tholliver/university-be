@@ -72,6 +72,7 @@ export class CareerEnrollmentController {
 
       return res.status(404).send({ error: 'No tables found' })
     }
+    console.log('Validation erros: ', validationRes.error)
     return res.status(500).send({ error: 'No check the data' })
   }
 }
