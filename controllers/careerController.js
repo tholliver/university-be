@@ -1,11 +1,5 @@
 import { Career } from '../models/careerModel.js'
 import { validateCareer } from '../schemas/career.js'
-// validatePartialCareer
-// import { sequelizeConnection } from '../conn.js'
-
-// export const getCareers = sequelizeConnection.sync().then(() => {
-
-// })
 
 export class CareerController {
   static async getCareers(req, res) {

@@ -9,7 +9,6 @@ import {
   careerEnrollmentRouter,
   dashboardRouter
 } from './routes/index.js'
-// import pg from 'pg'
 
 export const app = express()
 app.disable('x-powered-by')
